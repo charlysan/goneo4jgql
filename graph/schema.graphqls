@@ -1,0 +1,35 @@
+interface Node {
+  uuid: ID!
+}
+
+type Movie implements Node {
+  uuid: ID!
+  title: String!
+  tagline: String!
+  released: Int!
+  directors: [Person!]!
+  writers: [Person!]!
+  cast: [Person!]!
+}
+
+type Person implements Node {
+  uuid: ID!
+  name: String!
+  born: Int!
+  role: String
+  participated: [Participation!]!
+}
+
+""" Participation represents a person's role in a movie """
+type Participation {
+  role: String!
+  movie: Movie!
+}
+
+type Query {
+  """ Find a movie by its uuid """
+  movie(uuid: String!): Movie
+
+  """ Find movies by title and actor name """
+  movies(title: String, actor: String): [Movie!]!
+}

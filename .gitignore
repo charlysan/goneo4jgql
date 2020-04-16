@@ -1,0 +1,26 @@
+# data folder
+# Ignore everything
+#######################################
+/neo4j/data/**
+# except directories with .gitkeep...
+!/neo4j/.gitkeep
+!/neo4j/**/.gitkeep
+# ...even if they are in subdirectories
+# !*
+
+# gqlgen generated files
+generated.go
+models_gen.go
+
+# Misc
+vendor/
+.DS_Store
+mocks/
+*.gz
+*.bak
+*.log
+*.jar
+
+# Editors
+\.vscode/
+.idea
