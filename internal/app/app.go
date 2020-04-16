@@ -7,8 +7,8 @@ import (
 
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
-	"github.com/charlysan/goneo4jgql/graph"
-	"github.com/charlysan/goneo4jgql/graph/generated"
+	"github.com/charlysan/goneo4jgql/internal/app/graph"
+	"github.com/charlysan/goneo4jgql/internal/app/graph/generated"
 	"github.com/charlysan/goneo4jgql/internal/app/repository"
 	"github.com/charlysan/goneo4jgql/internal/app/service"
 	"github.com/charlysan/goneo4jgql/pkg/logger"
@@ -27,11 +27,11 @@ func Init() *App {
 	viper.AutomaticEnv()
 
 	// Set default values
-	viper.SetDefault("API_PORT", 8080)
+	viper.SetDefault("API_PORT", "8080")
 	viper.SetDefault("LOGGER_FORMATTER", "console")
 	viper.SetDefault("LOGGER_LEVEL", "debug")
 	viper.SetDefault("NEO4J_HOST", "localhost")
-	viper.SetDefault("NEO4J_PORT", 7687)
+	viper.SetDefault("NEO4J_PORT", "7687")
 	viper.SetDefault("NEO4J_USER", "neo4j")
 	viper.SetDefault("NEO4J_PASS", "test")
 	viper.SetDefault("NEO4J_PROTO", "bolt")

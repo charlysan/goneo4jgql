@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/charlysan/goneo4jgql/graph/model"
+	"github.com/charlysan/goneo4jgql/internal/app/graph/model"
 	"github.com/charlysan/goneo4jgql/internal/app/models"
 	"github.com/charlysan/goneo4jgql/internal/app/repository"
 )

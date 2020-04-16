@@ -7,8 +7,8 @@ import (
 	"context"
 	"strings"
 
-	"github.com/charlysan/goneo4jgql/graph/generated"
-	"github.com/charlysan/goneo4jgql/graph/model"
+	"github.com/charlysan/goneo4jgql/internal/app/graph/generated"
+	"github.com/charlysan/goneo4jgql/internal/app/graph/model"
 	"github.com/charlysan/goneo4jgql/internal/app/models"
 	validator "github.com/go-playground/validator/v10"
 )

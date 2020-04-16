@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/charlysan/goneo4jgql/graph/model"
+	"github.com/charlysan/goneo4jgql/internal/app/graph/model"
 	"github.com/charlysan/goneo4jgql/internal/app/models"
 	"github.com/charlysan/goneo4jgql/pkg/logger"
 	"github.com/neo4j/neo4j-go-driver/neo4j"
@@ -21,7 +21,6 @@ func NewNeo4jConnection() (neo4j.Driver, error) {
 		neo4j.BasicAuth(viper.GetString("NEO4J_USER"), viper.GetString("NEO4J_PASS"), ""),
 		func(c *neo4j.Config) {
 			c.Encrypted = false
-			//c.Log = neo4j.ConsoleLogger(neo4j.DEBUG)
 		})
 	if err != nil {
 		logger.Error("Cannot connect to Neo4j Server", err)
