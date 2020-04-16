@@ -12,7 +12,7 @@ func TestParseCypherQueryResult(t *testing.T) {
 	movie := models.Movie{}
 	ParseCypherQueryResult(record, "m", &movie)
 
-	assert.Equal(t, "Movie titles", movie.Title)
+	assert.Equal(t, "Movie title", movie.Title)
 }
 
 type RecordMock struct{}

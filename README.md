@@ -1,13 +1,13 @@
 # goneo4jgql
 
-Golang + Neo4j + GraphQL + Docker stack example
+Golang + Neo4j + GraphQL + Docker stack example 
 
 
 ## Stack
 
 * [Go 1.14](https://golang.org/doc/go1.14)
 * [gqlgen](https://github.com/99designs/gqlgen)
-* [neo4j-go-driver](github.com/neo4j/neo4j-go-driver)
+* [neo4j-go-driver](https://github.com/neo4j/neo4j-go-driver)
 * [Neo4j apoc plugin](https://github.com/neo4j-contrib/neo4j-apoc-procedures/releases/download/3.5.0.9/apoc-3.5.0.9-all.jar)
 * [seabolt connector v1.7.4](https://github.com/neo4j-drivers/seabolt)
 * [Neo4j Server v3.5.17](https://github.com/neo4j/neo4j/wiki/Neo4j-3.5-changelog#3517)
@@ -44,7 +44,7 @@ docker-compose -f dockercompose.yml up -d
 
 Check the logs
 ```bash
-docker-compose -f dockercompose.yml up -d
+docker-compose -f dockercompose.yml logs -f
 ```
 
 You should get an output like this one:
@@ -93,12 +93,12 @@ pass: test
 
 ## GraphQL API Usage
 
-You should be able to access Playground at [http://0.0.0.0:8080/playground](http://0.0.0.0:8080/playground) and see something like this:
+You should be able to access Playground at [http://0.0.0.0:8080/playground](http://0.0.0.0:8080/playground):
 
 ![browser](./docs/i/playground.png)
 
 
-### QraphQL queries examples
+### GraphQL queries examples
 
 **Get the list of movies** 
 
@@ -115,7 +115,7 @@ query movies {
 ![browser](./docs/i/movie_list.png)]
 
 
-**Get the list of movies that contains "top" in their title** 
+**Get the list of movies with title containing "top"** 
 ```graphql
 query movies {
   movies (title: "top") {
@@ -170,3 +170,11 @@ query movies {
 ```
 
 ![browser](./docs/i/participations.png)
+
+
+## Final notes
+
+* I haven't included any dotaloader yet, so expect performance issues for complex graphql queries.
+* This is a very simple example made as a proof of concept for a neo4j-grapqhl-go stack. I'm not including any interesting query to take advantage of the real power of graph dbs (at least not in this first version).
+* I haven't added any graphql depth/complexity limiting mechanism, so take that into consideration when executing complex queries.
+* I used Neo4j v3.5 instead of v4 because bolt connector does not support yet the latest v4 protocol.
