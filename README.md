@@ -16,11 +16,11 @@ Golang + Neo4j + GraphQL + Docker stack example
 
 ## Introduction
 
-This is just a simple example on how to implement a GrapqhQL API on top of Neo4j using Golang. I have included the [Neo4j movie example dataset](https://neo4j.com/developer/guide-cypher-basics/) that has the followin domain model:
+This is just a simple example on how to implement a GrapqhQL API on top of Neo4j using Golang. I have included the [Neo4j movie example dataset](https://neo4j.com/developer/guide-cypher-basics/) that has the following domain model:
 
 ![domain](./docs/i/domain.png)
 
-**Note**: I have slightly modified the original dataset by adding UUIDs to each node. You can find the cyper queries I used for that at the end of the [movies.cyper import file](neo4j/import/movies.cypher)
+**Note**: I have slightly modified the original dataset by adding UUIDs to each node. You can find the cypher queries I used for that at the end of the [movies.cypher import file](neo4j/import/movies.cypher)
 
 
 ## Setup (Using Docker)
@@ -112,6 +112,9 @@ query movies {
 }
 ```
 
+![browser](./docs/i/movie_list.png)]
+
+
 **Get the list of movies that contains "top" in their title** 
 ```graphql
 query movies {
@@ -142,6 +145,8 @@ query movies {
   }
 }
 ```
+
+![browser](./docs/i/cast.png)]
 
 
 **Get the list of participations for each cast member for Top Gun**
