@@ -34,22 +34,22 @@ git clone https://github.com/charlysan/pyrfidhid.git
 
 2 - Build app docker image
 ```bash
-docker-compose -f dockercompose.yml build
+docker-compose build
 ```
 
 3 - Startup Neo4j and goneo4jgql containers:
 ```bash
-docker-compose -f dockercompose.yml up -d
+docker-compose up -d
 ```
 
 Check the logs
 ```bash
-docker-compose -f dockercompose.yml logs -f
+docker-compose logs -f
 ```
 
 You should get an output like this one:
 ```
-$ docker-compose -f dockercompose.yml logs -f
+$ docker-compose logs -f
 Attaching to goneo4jgql, neo4j
 goneo4jgql | time="2020-04-16T05:54:09Z" level=info msg="Connected to Neo4j Server" neo4j_server_uri="bolt://neo4j:7687" prefix=main
 goneo4jgql | time="2020-04-16T05:54:09Z" level=info msg="API Listening" api_url="0.0.0.0:8080" prefix=main
@@ -77,7 +77,7 @@ neo4j    | 2020-04-16 05:55:09.186+0000 INFO  Remote interface available at http
 
 4 - Load movie dataset
 ```bash
-docker-compose -f dockercompose.yml exec neo4j /bin/bash -c 'cat /var/lib/neo4j/import/movies.cypher | cypher-shell -u neo4j -p test'
+docker-compose exec neo4j /bin/bash -c 'cat /var/lib/neo4j/import/movies.cypher | cypher-shell -u neo4j -p test'
 ```
 
 That's all. You should be able to login to Neo4j browser at [http://127.0.0.1:7474/browser/](http://127.0.0.1:7474/browser/)
