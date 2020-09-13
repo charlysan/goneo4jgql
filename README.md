@@ -1,7 +1,6 @@
 # goneo4jgql
 
-Golang + Neo4j + GraphQL + Docker stack example 
-
+Neo4j example using Golang, GrapQL and Docker
 
 ## Stack
 
