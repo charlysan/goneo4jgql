@@ -1,6 +1,6 @@
 # goneo4jgql
 
-Neo4j example using Golang, GrapQL and Docker
+Neo4j example using Golang, GraphQL and Docker
 
 ## Stack
 
@@ -15,7 +15,7 @@ Neo4j example using Golang, GrapQL and Docker
 
 ## Introduction
 
-This is just a simple example on how to implement a GrapqhQL API on top of Neo4j using Golang. I have included the [Neo4j movie example dataset](https://neo4j.com/developer/guide-cypher-basics/) that has the following domain model:
+This is just a simple example on how to implement a GraphQL API on top of Neo4j using Golang. I have included the [Neo4j movie example dataset](https://neo4j.com/developer/guide-cypher-basics/) that has the following domain model:
 
 ![domain](./docs/i/domain.png)
 
